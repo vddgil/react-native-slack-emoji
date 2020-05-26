@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  ScrollView, Text, TouchableHighlight, View,
+  ScrollView, Text, TouchableHighlight, View, Keyboard,
 } from 'react-native';
 import PropTypes from 'prop-types';
 
@@ -21,14 +21,14 @@ function SearchContent({
   }
 
   return (
-    <ScrollView keyboardShouldPersistTaps="always" style={{ flex: 0.8 }}>
+    <ScrollView keyboardShouldPersistTaps="handled" style={{ flex: 0.8 }}>
       {emojis.map((filteredEmoji) => {
         const emoji = charFromUtf16(data.emojis[filteredEmoji].unified);
         return (
           <TouchableHighlight
             key={filteredEmoji}
             underlayColor="blue"
-            onPress={() => onSelect(emoji, filteredEmoji, data.emojis[filteredEmoji])}
+            onPress={() => { Keyboard.dismiss(); onSelect(emoji, filteredEmoji, data.emojis[filteredEmoji]); }}
           >
             <View style={style.searchRow}>
               <Text style={style.searchEmoji}>{emoji}</Text>

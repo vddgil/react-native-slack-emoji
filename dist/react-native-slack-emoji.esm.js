@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Dimensions, StyleSheet, View, TextInput, TouchableOpacity, Text, ScrollView, TouchableHighlight, AsyncStorage, Keyboard, FlatList, Image, Modal, SafeAreaView, KeyboardAvoidingView, Platform } from 'react-native';
+import { Dimensions, StyleSheet, View, TextInput, TouchableOpacity, Text, ScrollView, TouchableHighlight, Keyboard, AsyncStorage, FlatList, Image, Modal, SafeAreaView, KeyboardAvoidingView, Platform } from 'react-native';
 import EntypoIcons from 'react-native-vector-icons/Entypo';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
@@ -322,7 +322,7 @@ function SearchContent(_ref) {
   }
 
   return React.createElement(ScrollView, {
-    keyboardShouldPersistTaps: "always",
+    keyboardShouldPersistTaps: "handled",
     style: {
       flex: 0.8
     }
@@ -332,7 +332,8 @@ function SearchContent(_ref) {
       key: filteredEmoji,
       underlayColor: "blue",
       onPress: function onPress() {
-        return onSelect(emoji, filteredEmoji, data.emojis[filteredEmoji]);
+        Keyboard.dismiss();
+        onSelect(emoji, filteredEmoji, data.emojis[filteredEmoji]);
       }
     }, React.createElement(View, {
       style: style.searchRow

@@ -327,7 +327,7 @@
     }
 
     return React.createElement(reactNative.ScrollView, {
-      keyboardShouldPersistTaps: "always",
+      keyboardShouldPersistTaps: "handled",
       style: {
         flex: 0.8
       }
@@ -337,7 +337,8 @@
         key: filteredEmoji,
         underlayColor: "blue",
         onPress: function onPress() {
-          return onSelect(emoji, filteredEmoji, data.emojis[filteredEmoji]);
+          reactNative.Keyboard.dismiss();
+          onSelect(emoji, filteredEmoji, data.emojis[filteredEmoji]);
         }
       }, React.createElement(reactNative.View, {
         style: style.searchRow
