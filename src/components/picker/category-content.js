@@ -1,7 +1,7 @@
 /* eslint-disable no-restricted-syntax */
 import React from 'react';
 import {
-  FlatList, Image, Text, TouchableHighlight, View,
+  FlatList, Image, Text, TouchableHighlight, View, Keyboard,
 } from 'react-native';
 import PropTypes from 'prop-types';
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -97,6 +97,7 @@ class CategoryContent extends React.Component {
   selectEmoji(emoji, name, data) {
     const { onSelect } = this.props;
     this.randomColor();
+    Keyboard.dismiss();
     onSelect(emoji, name, data);
   }
 
@@ -116,7 +117,7 @@ class CategoryContent extends React.Component {
           }}
           onScrollToIndexFailed={() => {}}
           onViewableItemsChanged={this.onViewableItemsChanged}
-          keyboardShouldPersistTaps="always"
+          keyboardShouldPersistTaps="handled"
           style={{ flex: 1 }}
           stickyHeaderIndices={stickyHeaderIndices}
           data={list}

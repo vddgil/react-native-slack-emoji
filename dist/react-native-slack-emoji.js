@@ -111,7 +111,7 @@
       justifyContent: 'center'
     },
     emojiPicker: {
-      borderRadius: 8,
+      borderRadius: 15,
       borderWidth: 1,
       borderColor: '#E9E7E7',
       flexDirection: 'row',
@@ -46508,6 +46508,7 @@
     _proto.selectEmoji = function selectEmoji(emoji, name, data) {
       var onSelect = this.props.onSelect;
       this.randomColor();
+      reactNative.Keyboard.dismiss();
       onSelect(emoji, name, data);
     };
 
@@ -46537,7 +46538,7 @@
         },
         onScrollToIndexFailed: function onScrollToIndexFailed() {},
         onViewableItemsChanged: this.onViewableItemsChanged,
-        keyboardShouldPersistTaps: "always",
+        keyboardShouldPersistTaps: "handled",
         style: {
           flex: 1
         },

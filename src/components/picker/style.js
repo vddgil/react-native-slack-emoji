@@ -18,7 +18,7 @@ export default StyleSheet.create({
     justifyContent: 'center',
   },
   emojiPicker: {
-    borderRadius: 8,
+    borderRadius: 15,
     borderWidth: 1,
     borderColor: '#E9E7E7',
     flexDirection: 'row',

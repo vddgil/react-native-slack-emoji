@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Dimensions, StyleSheet, View, TextInput, TouchableOpacity, Text, ScrollView, TouchableHighlight, AsyncStorage, FlatList, Image, Modal, SafeAreaView, KeyboardAvoidingView, Platform } from 'react-native';
+import { Dimensions, StyleSheet, View, TextInput, TouchableOpacity, Text, ScrollView, TouchableHighlight, AsyncStorage, Keyboard, FlatList, Image, Modal, SafeAreaView, KeyboardAvoidingView, Platform } from 'react-native';
 import EntypoIcons from 'react-native-vector-icons/Entypo';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
@@ -106,7 +106,7 @@ var style = StyleSheet.create({
     justifyContent: 'center'
   },
   emojiPicker: {
-    borderRadius: 8,
+    borderRadius: 15,
     borderWidth: 1,
     borderColor: '#E9E7E7',
     flexDirection: 'row',
@@ -46503,6 +46503,7 @@ function (_React$Component) {
   _proto.selectEmoji = function selectEmoji(emoji, name, data) {
     var onSelect = this.props.onSelect;
     this.randomColor();
+    Keyboard.dismiss();
     onSelect(emoji, name, data);
   };
 
@@ -46532,7 +46533,7 @@ function (_React$Component) {
       },
       onScrollToIndexFailed: function onScrollToIndexFailed() {},
       onViewableItemsChanged: this.onViewableItemsChanged,
-      keyboardShouldPersistTaps: "always",
+      keyboardShouldPersistTaps: "handled",
       style: {
         flex: 1
       },
