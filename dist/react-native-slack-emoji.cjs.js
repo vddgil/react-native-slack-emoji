@@ -108,19 +108,19 @@ var style = reactNative.StyleSheet.create({
     marginBottom: 5,
     marginRight: 7,
     height: 30,
-    borderRadius: 8,
-    borderWidth: 1,
-    borderColor: '#b7b7b7',
     alignItems: 'center',
     justifyContent: 'center'
   },
   emojiPicker: {
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: '#E9E7E7',
     flexDirection: 'row',
-    backgroundColor: '#e5f5fa',
-    borderColor: '#43b4e1'
+    backgroundColor: '#E9E7E7'
   },
   emojiPickerSelected: {
-    borderColor: 'red'
+    backgroundColor: '#D8E3EF',
+    borderColor: '#499CF4'
   },
   emoji: {
     marginHorizontal: 10,
