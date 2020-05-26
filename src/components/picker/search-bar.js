@@ -14,7 +14,6 @@ function SearchBar({
     <View style={style.searchBarWrapper}>
       <Ionicons name="ios-search" style={style.searchIcon} />
       <TextInput
-        autoFocus
         style={style.searchBarInput}
         onChangeText={onChangeText}
         placeholder={placeholder}

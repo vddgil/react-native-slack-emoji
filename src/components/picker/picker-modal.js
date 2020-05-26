@@ -107,6 +107,7 @@ class PickerModal extends React.Component {
         animationType={animationType}
         presentationStyle={presentationStyle}
         transparent={false}
+        hardwareAccelerated
       >
         <SafeAreaView style={style.container}>
           <KeyboardAvoidingView style={style.container} behavior={Platform.OS === 'ios' && 'padding'} enabled>

@@ -257,7 +257,6 @@ function SearchBar(_ref) {
     name: "ios-search",
     style: style.searchIcon
   }), React.createElement(reactNative.TextInput, {
-    autoFocus: true,
     style: style.searchBarInput,
     onChangeText: onChangeText,
     placeholder: placeholder,
@@ -46767,7 +46766,8 @@ function (_React$Component) {
       onRequestClose: onClose,
       animationType: animationType,
       presentationStyle: presentationStyle,
-      transparent: false
+      transparent: false,
+      hardwareAccelerated: true
     }, React.createElement(reactNative.SafeAreaView, {
       style: style.container
     }, React.createElement(reactNative.KeyboardAvoidingView, {
