@@ -114,7 +114,7 @@ var style = StyleSheet.create({
   },
   emojiPickerSelected: {
     backgroundColor: '#D8E3EF',
-    borderColor: '#499CF4'
+    borderColor: '#21243B'
   },
   emoji: {
     marginHorizontal: 10,
