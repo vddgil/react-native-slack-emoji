@@ -38,6 +38,7 @@ class Picker extends React.Component {
         <View style={style.wrapper}>
           {emojiList.map(({ emoji, name, index, selected }) => (
             <TouchableHighlight
+              underlayColor="#F8F8F8"
               onPress={() => updateEmoji(emoji, name, index)}
               key={name}
             >
@@ -47,6 +48,7 @@ class Picker extends React.Component {
             </TouchableHighlight>
           ))}
           <TouchableHighlight
+            underlayColor="#F8F8F8"
             onPress={this.openModal}
           >
             <View style={style.picker}>

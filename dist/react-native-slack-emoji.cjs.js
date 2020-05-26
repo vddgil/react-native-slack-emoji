@@ -46891,6 +46891,7 @@ function (_React$Component) {
           index = _ref.index,
           selected = _ref.selected;
       return React.createElement(reactNative.TouchableHighlight, {
+        underlayColor: "#F8F8F8",
         onPress: function onPress() {
           return updateEmoji(emoji, name, index);
         },
@@ -46901,6 +46902,7 @@ function (_React$Component) {
         style: style.emoji
       }, emoji + " " + index)));
     }), React.createElement(reactNative.TouchableHighlight, {
+      underlayColor: "#F8F8F8",
       onPress: this.openModal
     }, React.createElement(reactNative.View, {
       style: style.picker
