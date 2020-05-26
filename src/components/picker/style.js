@@ -15,7 +15,7 @@ export default StyleSheet.create({
     marginRight: 7,
     height: 30,
     borderRadius: 8,
-    borderWidth: 0.2,
+    borderWidth: 1,
     borderColor: '#b7b7b7',
     alignItems: 'center',
     justifyContent: 'center',
@@ -26,8 +26,6 @@ export default StyleSheet.create({
     borderColor: '#43b4e1',
   },
   emojiPickerSelected: {
-    flexDirection: 'row',
-    backgroundColor: '#e5f5fa',
     borderColor: 'red',
   },
   emoji: {

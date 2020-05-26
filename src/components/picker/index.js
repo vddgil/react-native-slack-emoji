@@ -36,15 +36,13 @@ class Picker extends React.Component {
     return (
       <React.Fragment>
         <View style={style.wrapper}>
-          {emojiList.map(({
-            emoji, name, index, selected,
-          }) => (
+          {emojiList.map(({ emoji, name, index, selected }) => (
             <TouchableHighlight
               underlayColor="#ffffff"
               onPress={() => updateEmoji(emoji, name, index)}
               key={name}
             >
-              <View style={[style.picker, selected ? style.emojiPickerSelected : style.emojiPicker]}>
+              <View style={[style.picker, style.emojiPicker, selected ? style.emojiPickerSelected : null]}>
                 <Text style={style.emoji}>{`${emoji} ${index}`}</Text>
               </View>
             </TouchableHighlight>

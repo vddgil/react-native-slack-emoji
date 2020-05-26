@@ -108,7 +108,7 @@
       marginRight: 7,
       height: 30,
       borderRadius: 8,
-      borderWidth: 0.2,
+      borderWidth: 1,
       borderColor: '#b7b7b7',
       alignItems: 'center',
       justifyContent: 'center'
@@ -119,8 +119,6 @@
       borderColor: '#43b4e1'
     },
     emojiPickerSelected: {
-      flexDirection: 'row',
-      backgroundColor: '#e5f5fa',
       borderColor: 'red'
     },
     emoji: {
@@ -46896,7 +46894,7 @@
           },
           key: name
         }, React.createElement(reactNative.View, {
-          style: [style.picker, selected ? style.emojiPickerSelected : style.emojiPicker]
+          style: [style.picker, style.emojiPicker, selected ? style.emojiPickerSelected : null]
         }, React.createElement(reactNative.Text, {
           style: style.emoji
         }, emoji + " " + index)));
