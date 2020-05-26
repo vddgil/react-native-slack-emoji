@@ -120,13 +120,13 @@ var style = reactNative.StyleSheet.create({
   },
   emojiPickerSelected: {
     backgroundColor: '#D8E3EF',
-    borderColor: '#21243B'
+    borderColor: '#499CF4'
   },
   emoji: {
     marginHorizontal: 10,
     fontSize: 14,
     fontWeight: '500',
-    color: '#0063a8'
+    color: '#21243B'
   },
   pickerIcon: {
     marginHorizontal: 15,
