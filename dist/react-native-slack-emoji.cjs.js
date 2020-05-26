@@ -119,6 +119,9 @@ var style = reactNative.StyleSheet.create({
     backgroundColor: '#e5f5fa',
     borderColor: '#43b4e1'
   },
+  emojiPickerSelected: {
+    borderColor: '#499CF4'
+  },
   emoji: {
     marginHorizontal: 10,
     fontSize: 14,
@@ -46876,13 +46879,15 @@ function (_React$Component) {
         onShow = _this$props.onShow,
         onClose = _this$props.onClose,
         animationType = _this$props.animationType,
-        presentationStyle = _this$props.presentationStyle;
+        presentationStyle = _this$props.presentationStyle,
+        addIcon = _this$props.addIcon;
     return React.createElement(React.Fragment, null, React.createElement(reactNative.View, {
       style: style.wrapper
     }, emojiList.map(function (_ref) {
       var emoji = _ref.emoji,
           name = _ref.name,
-          index = _ref.index;
+          index = _ref.index,
+          selected = _ref.selected;
       return React.createElement(reactNative.TouchableHighlight, {
         underlayColor: "#ffffff",
         onPress: function onPress() {
@@ -46890,7 +46895,7 @@ function (_React$Component) {
         },
         key: name
       }, React.createElement(reactNative.View, {
-        style: [style.picker, style.emojiPicker]
+        style: [style.picker, style.emojiPicker, selected ? style.emojiPickerSelected : null]
       }, React.createElement(reactNative.Text, {
         style: style.emoji
       }, emoji + " " + index)));
@@ -46899,7 +46904,7 @@ function (_React$Component) {
       onPress: this.openModal
     }, React.createElement(reactNative.View, {
       style: style.picker
-    }, React.createElement(EntypoIcons, {
+    }, addIcon || React.createElement(EntypoIcons, {
       name: "emoji-happy",
       style: style.pickerIcon
     })))), React.createElement(PickerModal, {
@@ -46935,7 +46940,8 @@ Picker.defaultProps = {
   onShow: function onShow() {},
   onClose: function onClose() {},
   animationType: 'slide',
-  presentationStyle: 'fullScreen'
+  presentationStyle: 'fullScreen',
+  addIcon: null
 };
 Picker.propTypes = {
   emojiList: PropTypes.array.isRequired,
@@ -46956,7 +46962,8 @@ Picker.propTypes = {
   onShow: PropTypes.func,
   onClose: PropTypes.func,
   animationType: PropTypes.string,
-  presentationStyle: PropTypes.string
+  presentationStyle: PropTypes.string,
+  addIcon: PropTypes.node
 };
 
 exports.Picker = Picker;

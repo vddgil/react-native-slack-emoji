@@ -31,17 +31,20 @@ class Picker extends React.Component {
       onClose,
       animationType,
       presentationStyle,
+      addIcon,
     } = this.props;
     return (
       <React.Fragment>
         <View style={style.wrapper}>
-          {emojiList.map(({ emoji, name, index }) => (
+          {emojiList.map(({
+            emoji, name, index, selected,
+          }) => (
             <TouchableHighlight
               underlayColor="#ffffff"
               onPress={() => updateEmoji(emoji, name, index)}
               key={name}
             >
-              <View style={[style.picker, style.emojiPicker]}>
+              <View style={[style.picker, style.emojiPicker, selected ? style.emojiPickerSelected : null]}>
                 <Text style={style.emoji}>{`${emoji} ${index}`}</Text>
               </View>
             </TouchableHighlight>
@@ -51,7 +54,7 @@ class Picker extends React.Component {
             onPress={this.openModal}
           >
             <View style={style.picker}>
-              <EntypoIcons name="emoji-happy" style={style.pickerIcon} />
+              { addIcon || <EntypoIcons name="emoji-happy" style={style.pickerIcon} /> }
             </View>
           </TouchableHighlight>
         </View>
@@ -89,6 +92,7 @@ Picker.defaultProps = {
   onClose: () => {},
   animationType: 'slide',
   presentationStyle: 'fullScreen',
+  addIcon: null,
 };
 
 Picker.propTypes = {
@@ -113,6 +117,7 @@ Picker.propTypes = {
   onClose: PropTypes.func,
   animationType: PropTypes.string,
   presentationStyle: PropTypes.string,
+  addIcon: PropTypes.node,
 };
 
 export default Picker;

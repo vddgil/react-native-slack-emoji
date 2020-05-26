@@ -25,6 +25,9 @@ export default StyleSheet.create({
     backgroundColor: '#e5f5fa',
     borderColor: '#43b4e1',
   },
+  emojiPickerSelected: {
+    borderColor: '#499CF4'
+  },
   emoji: {
     marginHorizontal: 10,
     fontSize: 14,
