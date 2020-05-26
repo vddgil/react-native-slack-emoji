@@ -114,7 +114,9 @@ var style = StyleSheet.create({
     borderColor: '#43b4e1'
   },
   emojiPickerSelected: {
-    borderColor: '#499CF4'
+    flexDirection: 'row',
+    backgroundColor: '#e5f5fa',
+    borderColor: 'red'
   },
   emoji: {
     marginHorizontal: 10,
@@ -46889,7 +46891,7 @@ function (_React$Component) {
         },
         key: name
       }, React.createElement(View, {
-        style: [style.picker, style.emojiPicker, selected ? style.emojiPickerSelected : null]
+        style: [style.picker, selected ? style.emojiPickerSelected : style.emojiPicker]
       }, React.createElement(Text, {
         style: style.emoji
       }, emoji + " " + index)));

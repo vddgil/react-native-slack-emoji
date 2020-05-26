@@ -44,7 +44,7 @@ class Picker extends React.Component {
               onPress={() => updateEmoji(emoji, name, index)}
               key={name}
             >
-              <View style={[style.picker, style.emojiPicker, selected ? style.emojiPickerSelected : null]}>
+              <View style={[style.picker, selected ? style.emojiPickerSelected : style.emojiPicker]}>
                 <Text style={style.emoji}>{`${emoji} ${index}`}</Text>
               </View>
             </TouchableHighlight>

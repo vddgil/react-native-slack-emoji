@@ -26,7 +26,9 @@ export default StyleSheet.create({
     borderColor: '#43b4e1',
   },
   emojiPickerSelected: {
-    borderColor: '#499CF4'
+    flexDirection: 'row',
+    backgroundColor: '#e5f5fa',
+    borderColor: 'red',
   },
   emoji: {
     marginHorizontal: 10,
